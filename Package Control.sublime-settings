@@ -1,0 +1,25 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"Blade Snippets",
+		"BracketHighlighter",
+		"ConvertToUTF8",
+		"DocBlockr",
+		"JsFormat",
+		"Laravel 5 Snippets",
+		"Laravel Blade Highlighter",
+		"MarkdownEditing",
+		"OmniMarkupPreviewer",
+		"Package Control",
+		"PackageResourceViewer",
+		"SideBarEnhancements",
+		"Tag",
+		"Theme - Soda",
+		"TrailingSpaces"
+	]
+}
