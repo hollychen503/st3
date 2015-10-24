@@ -1,27 +1,48 @@
-## Laravel PHP Framework
+#使用git在多台机器上同步sublime text的设置和插件
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+##package文件夹位置
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+windows: `C:\Users\[YourName]\AppData\Roaming\Sublime Text 3\Packages`
+mac: `/Library/Application\ Support/Sublime\ Text\ 3/Packages/`
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+有些文件/文件夹不需要同步，加入到.gitignore
 
-## Official Documentation
+```
+Package Control.last-run
+Package Control.ca-list
+Package Control.ca-bundle
+Package Control.system-ca-bundle
+Package Control.cache/
+Package Control.ca-certs/
+```
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+在第一台电脑上
+```
+cd [package folder]/User/
+git init
+git add
+git commit -m "Initial"
+git remote add origin [your git repo]
+git push origin master
+```
 
-## Contributing
+##这样就可以在其他电脑上clone这个repo了
+```
+cd [package folder]
+mv User User.old
+git clone [your git repo] User
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+##如果设置有了改变，再同步到repo里
+```
+cd [package folder]/User
+git add -A
+git commit -m "Update settings"
+git push
+```
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+##在其他电脑上同步
+```
+cd [package folder]/User
+git pull
+```
