@@ -3,7 +3,7 @@
 ##package文件夹位置
 
 windows: `C:\Users\[YourName]\AppData\Roaming\Sublime Text 3\Packages`
-mac: `/Library/Application\ Support/Sublime\ Text\ 3/Packages/`
+mac: ` /Users/HiroMac/Library/Application\ Support/Sublime\ Text\ 3/Packages`
 
 有些文件/文件夹不需要同步，加入到.gitignore
 
